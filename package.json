@@ -1,0 +1,44 @@
+{
+  "name": "@undeffineddev/indexa",
+  "version": "1.0.0",
+  "description": "A small TypeScript-friendly wrapper for the browser IndexedDB API, providing typed stores, simple CRUD operations, and reactive subscriptions.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "main": "dist/indexa.js",
+  "types": "dist/indexa.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UndeffinedDev/indexa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/UndeffinedDev/indexa/issues"
+  },
+  "homepage": "https://github.com/UndeffinedDev/indexa#readme",
+  "keywords": [
+    "indexeddb",
+    "typescript",
+    "database",
+    "browser",
+    "storage",
+    "crud",
+    "reactive",
+    "wrapper",
+    "localstorage",
+    "db",
+    "subscription"
+  ],
+  "author": "UndeffinedDev",
+  "license": "MIT",
+  "packageManager": "pnpm@10.26.2",
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
