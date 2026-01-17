@@ -11,12 +11,32 @@ type DBSchemaConfig = Record<string, StoreConfig>;
 
 type Subscriber<T> = (data: T[]) => void;
 
+
 export class Indexa<TSchema extends Record<string, any>> {
   private dbName: string;
   private dbVersion: number;
   private stores: DBSchemaConfig;
   private dbPromise: Promise<IDBDatabase>;
   private subscribers: Record<string, Subscriber<any>[]> = {};
+  private static debugEnabled: boolean = false;
+
+  /**
+   * Enable or disable debug messages globally for all Indexa instances.
+   * @param enabled true to enable debug messages, false to disable
+   */
+  static setDebug(enabled: boolean) {
+    Indexa.debugEnabled = enabled;
+  }
+
+  /**
+   * Internal debug log method
+   */
+  private debugLog(...args: any[]) {
+    if (Indexa.debugEnabled) {
+      // eslint-disable-next-line no-console
+      console.log('[Indexa]', ...args);
+    }
+  }
 
   /**
    * Creates a new instance of the Indexa database wrapper.
@@ -48,13 +68,15 @@ export class Indexa<TSchema extends Record<string, any>> {
         }
       };
 
+
       request.onsuccess = () => {
-        console.log("IndexedDB initialized:", request.result);
+        this.debugLog("IndexedDB initialized:", request.result);
         resolve(request.result);
       };
 
+
       request.onerror = () => {
-        console.error("IndexedDB error:", request.error);
+        this.debugLog("IndexedDB error:", request.error);
         reject(request.error);
       };
     });

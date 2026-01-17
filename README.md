@@ -1,5 +1,8 @@
 # Indexa
 
+> [!CAUTION]
+> If you're using the version 1.0.0, please update to 1.0.1, the first version was release with a unwanted debug message
+
 A small TypeScript-friendly wrapper around the browser `IndexedDB` API that provides typed stores, simple CRUD operations, and a subscription helper for reactive updates.
 
 **Highlights**
@@ -180,6 +183,23 @@ await db.deleteDatabase();
 - `iterate(storeName, callback)` — Iterate over all records in a store using a cursor.
 - `close()` — Close the database connection.
 - `deleteDatabase()` — Delete the entire database.
+
+---
+
+## Debug Messages
+
+You can enable or disable debug messages globally for all `Indexa` instances:
+
+```ts
+// Enable debug messages
+Indexa.setDebug(true);
+
+// Disable debug messages
+Indexa.setDebug(false);
+```
+
+By default, they are set to false.
+
 ---
 
 **Contributing**

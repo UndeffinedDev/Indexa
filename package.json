@@ -1,6 +1,6 @@
 {
   "name": "@undeffineddev/indexa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small TypeScript-friendly wrapper for the browser IndexedDB API, providing typed stores, simple CRUD operations, and reactive subscriptions.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
