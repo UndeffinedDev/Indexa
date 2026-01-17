@@ -4,7 +4,7 @@ A small TypeScript-friendly wrapper around the browser `IndexedDB` API that prov
 
 **Highlights**
 - **Typed**: Use TypeScript generics to define your DB schema.
-- **Simple API**: `add`, `get`, `getAll`, `update`, `delete`, `clear`, and `subscribe`.
+- **Simple API**: `add`, `get`, `getAll`, `update`, `delete`, `clear`, `subscribe`, `unsubscribe`, `getByIndex`, `count`, `bulkAdd`, `bulkUpdate`, `exists`, `iterate`, `close`, and `deleteDatabase`.
 - **Browser-focused**: Uses the global `indexedDB` (intended for browser environments).
 
 **Status**: Experimental — use with care in production and consider tests/polyfills for non-browser runtimes.
@@ -15,17 +15,24 @@ A small TypeScript-friendly wrapper around the browser `IndexedDB` API that prov
 
 **Installation & Setup**
 
-- Install:
-
+#### npm
+```bash
+npm install @undeffineddev/indexa
+```
+#### pnpm
 ```bash
 pnpm install @undeffineddev/indexa
+```
+#### yarn
+```bash
+yarn add @undeffineddev/indexa
 ```
 ---
 
 ### **Quick Usage**
 Import the class
 ```ts
-import { Indexa } from "./indexa";
+import { Indexa } from "@undeffineddev/indexa";
 ```
 
 Define a TypeScript schema and create a DB instance:
